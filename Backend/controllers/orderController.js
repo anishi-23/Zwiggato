@@ -1,7 +1,7 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
-const stripe = new Stripe("sk_test_51UUU9NGyO2omLpDLsga1mrjdaO7vhGRq7qzDw1geWOalIBrycmhKh7iNn19qis85hnEtlMiPlvmGbR7SdhnGqDHO00dOTjNdpR");
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const placeOrder = async (req, res) => {
   const frontend_url = "https://food-delivery-frontend-iiz8.onrender.com/";
   try {
